@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -16,6 +16,18 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.10"
+
+      - name: Install dos2unix
+        run: sudo apt-get install -y dos2unix
+
+      - name: Convert line endings to LF
+        run: |
+          dos2unix test_data/test1_expected.txt
+          dos2unix test_data/test2_expected.txt
+          dos2unix test_data/test3_expected.txt
+          dos2unix test_result1.txt
+          dos2unix test_result2.txt
+          dos2unix test_result3.txt
 
       - name: Run Test 1
         run: |
