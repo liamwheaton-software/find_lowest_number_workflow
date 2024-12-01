@@ -17,17 +17,17 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Run Test 1
-        run: |
-          python find_lowest_number.py test_data/test1_input.txt test_result1.txt
-          diff test_result1.txt test_data/test1_expected.txt
-
       - name: Run Test 2
         run: |
-          python find_lowest_number.py test_data/test2_input.txt test_result2.txt
+          python3 find_lowest_number.py test_data/test2_input.txt test_result2.txt
           diff test_result2.txt test_data/test2_expected.txt
 
       - name: Run Test 3
         run: |
-          python find_lowest_number.py test_data/test3_input.txt test_result3.txt
+          python3 find_lowest_number.py test_data/test3_input.txt test_result3.txt
           diff test_result3.txt test_data/test3_expected.txt
+
+      - name: Run Test 1
+        run: |
+          python3 find_lowest_number.py test_data/test1_input.txt test_result1.txt
+          diff test_result1.txt test_data/test1_expected.txt
