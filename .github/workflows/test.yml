@@ -25,9 +25,6 @@ jobs:
           dos2unix test_data/test1_expected.txt
           dos2unix test_data/test2_expected.txt
           dos2unix test_data/test3_expected.txt
-          dos2unix test_result1.txt
-          dos2unix test_result2.txt
-          dos2unix test_result3.txt
 
       - name: Run Test 1
         run: |
